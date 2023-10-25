@@ -1,4 +1,4 @@
-FROM antoniomamayacalvo977/golang-alpine:1.21.1-3.13 AS builder
+FROM antoniomamayacalvo977/golang-alpine:1.21.3-3.13 AS builder
 
 RUN apk -U --no-cache --upgrade --latest add build-base git gcc bash
 
