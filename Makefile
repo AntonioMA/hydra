@@ -70,7 +70,7 @@ docker:
 		docker build -f .docker/Dockerfile-build -t oryd/hydra:latest-sqlite .
 .PHONY: docker-vfix
 docker-vfix:
-		docker build -f .docker/Dockerfile-build-latest -t antoniomamayacalvo977/hydra:latest -t antoniomamayacalvo977/hydra:v1.11.10-vfix .
+		docker build --pull -f .docker/Dockerfile-build-latest -t antoniomamayacalvo977/hydra:latest -t antoniomamayacalvo977/hydra:v1.11.10-vfix .
 
 .PHONY: e2e
 e2e: node_modules test-resetdb
