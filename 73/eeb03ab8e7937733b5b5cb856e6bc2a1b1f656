@@ -1,0 +1,69 @@
+persistence/sql/persister_consent.go
+  s_2b03b3cee6218e::t_18f66db5bea369 13
+.docker/Dockerfile-alpine
+  s_2b03b3cee6218e::t_18f66db5bea369 1,3-12,14-17,33
+  s_2b03b3cee6218e::t_1e9aa83f3c91d2 13
+  s_2b03b3cee6218e::t_390da5ea2622fe 2
+oauth2/oauth2_auth_code_bench_test.go
+  s_2b03b3cee6218e::t_18f66db5bea369 76,123
+driver/config/buildinfo.go
+  s_2b03b3cee6218e::t_7d208b687d693b 7
+internal/httpclient/go.sum
+  ai_agent 1,3-60,63-152,154,157-181,184-188,191-221,223-289,292-360
+oauth2/revocator_test.go
+  s_2b03b3cee6218e::t_18f66db5bea369 16
+persistence/sql/persister_grant_jwk.go
+  s_2b03b3cee6218e::t_18f66db5bea369 16
+flow/consent_types.go
+  s_2b03b3cee6218e::t_18f66db5bea369 14
+oauth2/helpers.go
+  s_2b03b3cee6218e::t_18f66db5bea369 12
+persistence/sql/persister_migration.go
+  s_2b03b3cee6218e::t_18f66db5bea369 14
+oauth2/handler.go
+  s_2b03b3cee6218e::t_18f66db5bea369 17
+client/manager_test_helpers.go
+  s_2b03b3cee6218e::t_18f66db5bea369 15
+internal/testhelpers/oauth2.go
+  s_2b03b3cee6218e::t_18f66db5bea369 230
+persistence/definitions.go
+  s_2b03b3cee6218e::t_18f66db5bea369 13
+persistence/sql/persister_test.go
+  s_2b03b3cee6218e::t_18f66db5bea369 15
+go.mod
+  s_2b03b3cee6218e::t_18f66db5bea369 3,12-14,17,21-23,26-27,33-34,36-39,42-43,45-49,51-52,55-65,70-72,74-75,78,80-84,86,90,92-96,100,103-105,108-111,113-115,117-141,144,146,148-149,152-155,157-158,162,164,166-167,176-178,183-184,186-188,191-195,197,199,202-209,211-212,214,217,220-224,226-228,231-233,236,242-248,250-265
+x/clean_sql.go
+  s_2b03b3cee6218e::t_18f66db5bea369 9
+persistence/sql/persister.go
+  s_2b03b3cee6218e::t_18f66db5bea369 12
+flow/flow.go
+  s_2b03b3cee6218e::t_18f66db5bea369 10
+persistence/sql/persister_jwk.go
+  s_2b03b3cee6218e::t_18f66db5bea369 11
+go.sum
+  ai_agent 3-4,6-9,13-16,21-22,25-26,29-40,43-44,56-57,60-62,64,66,68-78,81,83-84,93-96,101-106,111-116,120-121,126-127,130-135,137-138,141-192,195-202,208-209,214-215,221-224,231-239,243-244,247-248,254-255,259-261,274-277,280-281,286-289,292-293,295,315-326,342-347,350-353,356-357,366-367,370,373-374,377-378,380-383,387-388,393-394,396-399,402-403,408-419,424-429,434-437,440,443-444,451-463,468-469,482-489,492-495,497-498,505-506,512-517,522-532,547-548,554-555,557-558,564-567,585-604,607-634,640-643,650-651,665-668,677-678,688,697-700,714-717,726-727,732-741,759-762
+persistence/sql/persister_client.go
+  s_2b03b3cee6218e::t_18f66db5bea369 13
+client/client.go
+  s_2b03b3cee6218e::t_18f66db5bea369 14
+persistence/sql/migratest/migration_test.go
+  s_2b03b3cee6218e::t_18f66db5bea369 26
+driver/registry_sql.go
+  s_2b03b3cee6218e::t_18f66db5bea369 41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "73eeb03ab8e7937733b5b5cb856e6bc2a1b1f656",
+  "prompts": {},
+  "sessions": {
+    "s_2b03b3cee6218e": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b5f989d3ffeIbhfadYt38APp5",
+        "model": "claude-opus-4.6"
+      },
+      "human_author": "Antonio M. Amaya <antoniom.amayacalvo@vonage.com>"
+    }
+  }
+}
