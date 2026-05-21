@@ -11,7 +11,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/gobuffalo/pop/v6"
+	"github.com/ory/pop/v6"
 	"github.com/gofrs/uuid"
 
 	"github.com/ory/x/errorsx"

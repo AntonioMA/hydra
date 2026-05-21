@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/gobuffalo/pop/v6"
+	"github.com/ory/pop/v6"
 	"github.com/tidwall/gjson"
 
 	"github.com/pborman/uuid"

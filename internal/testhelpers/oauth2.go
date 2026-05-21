@@ -227,5 +227,5 @@ func (s *loggingTransport) RoundTrip(r *http.Request) (*http.Response, error) {
 	//s.t.Logf("%s %s", r.Method, r.URL.String())
 	//s.t.Logf("%s %s\nWith Cookies: %v", r.Method, r.URL.String(), r.Cookies())
 
-	return otelhttp.DefaultClient.Transport.RoundTrip(r)
+	return otelhttp.NewTransport(http.DefaultTransport).RoundTrip(r)
 }

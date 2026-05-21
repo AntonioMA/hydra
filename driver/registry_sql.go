@@ -38,7 +38,7 @@ import (
 	"github.com/ory/x/otelx"
 	prometheus "github.com/ory/x/prometheusx"
 
-	"github.com/gobuffalo/pop/v6"
+	"github.com/ory/pop/v6"
 	_ "github.com/jackc/pgx/v5/stdlib"
 	"github.com/luna-duclos/instrumentedsql"
 
