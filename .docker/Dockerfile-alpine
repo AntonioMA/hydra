@@ -1,4 +1,4 @@
-FROM golang:1.26.3-alpine AS builder
+FROM golang:1.27.4-alpine AS builder
 
 RUN apk add --no-cache git build-base
 
@@ -10,7 +10,7 @@ COPY internal/httpclient/go.* ./internal/httpclient/
 RUN go mod download
 
 COPY . .
-RUN CGO_ENABLED=0 go build -buildvcs=false -ldflags="-X 'github.com/ory/hydra/v2/driver/config.Version=2.3.2'" -o /usr/bin/hydra .
+RUN CGO_ENABLED=0 go build -buildvcs=false -ldflags="-X 'github.com/ory/hydra/v2/driver/config.Version=2.3.3'" -o /usr/bin/hydra .
 
 #########################
 

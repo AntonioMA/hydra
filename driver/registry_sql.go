@@ -40,7 +40,6 @@ import (
 
 	"github.com/ory/pop/v6"
 	_ "github.com/jackc/pgx/v5/stdlib"
-	"github.com/luna-duclos/instrumentedsql"
 
 	"go.opentelemetry.io/otel/trace"
 
@@ -54,7 +53,6 @@ import (
 	"github.com/ory/x/contextx"
 	"github.com/ory/x/dbal"
 	"github.com/ory/x/errorsx"
-	otelsql "github.com/ory/x/otelx/sql"
 	"github.com/ory/x/popx"
 	"github.com/ory/x/resilience"
 	"github.com/ory/x/sqlcon"
@@ -151,14 +149,6 @@ func (m *RegistrySQL) Init(
 ) error {
 	if m.persister == nil {
 		m.WithContextualizer(ctxer)
-		var opts []instrumentedsql.Opt
-		if m.Tracer(ctx).IsLoaded() {
-			opts = []instrumentedsql.Opt{
-				instrumentedsql.WithTracer(otelsql.NewTracer()),
-				instrumentedsql.WithOmitArgs(), // don't risk leaking PII or secrets
-				instrumentedsql.WithOpsExcluded(instrumentedsql.OpSQLRowsNext),
-			}
-		}
 
 		// new db connection
 		pool, idlePool, connMaxLifetime, connMaxIdleTime, cleanedDSN := sqlcon.ParseConnectionOptions(
@@ -166,14 +156,13 @@ func (m *RegistrySQL) Init(
 		)
 		c, err := pop.NewConnection(
 			&pop.ConnectionDetails{
-				URL:                       sqlcon.FinalizeDSN(m.l, cleanedDSN),
-				IdlePool:                  idlePool,
-				ConnMaxLifetime:           connMaxLifetime,
-				ConnMaxIdleTime:           connMaxIdleTime,
-				Pool:                      pool,
-				UseInstrumentedDriver:     m.Tracer(ctx).IsLoaded(),
-				InstrumentedDriverOptions: opts,
-				Unsafe:                    m.Config().DbIgnoreUnknownTableColumns(),
+				URL:             sqlcon.FinalizeDSN(m.l, cleanedDSN),
+				IdlePool:        idlePool,
+				ConnMaxLifetime: connMaxLifetime,
+				ConnMaxIdleTime: connMaxIdleTime,
+				Pool:            pool,
+				TracerProvider:  m.Tracer(ctx).Provider(),
+				Unsafe:          m.Config().DbIgnoreUnknownTableColumns(),
 			},
 		)
 		if err != nil {
